@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "5mYS2dPFbP9/3OTBsXPNtL7dP7EsHbmgp7sRfTjqgS0=",
+  "Source": "dfs-timezone",
+  "BasePath": "_content/dfs-timezone",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
