@@ -12,10 +12,9 @@ namespace Models
             Time timeDeparture = new Time(departureCode);
             Time timeArrival = new Time(arrivalCode);
 
-            string depTime = timeDeparture.Hour + ":" + timeDeparture.Minutes;
-            DateTime startTime = Convert.ToDateTime(depTime);
-            string ArrTime = timeDeparture.Hour + ":" + timeDeparture.Minutes;
-            DateTime endTime = Convert.ToDateTime(ArrTime);
+            var dateNow = DateTime.Now;
+            DateTime startTime = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, timeDeparture.Hour, timeDeparture.Minutes, timeDeparture.Seconds);
+            DateTime endTime = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, timeArrival.Hour, timeArrival.Minutes, timeArrival.Seconds);
 
             TimeSpan duration = startTime - endTime;
 
