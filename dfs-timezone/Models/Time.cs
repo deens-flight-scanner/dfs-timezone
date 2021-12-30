@@ -31,7 +31,7 @@ namespace Models
         [DataMember]
         public int Seconds { get; set; }
         [DataMember]
-        public int UtcOffset { get; set; }
+        public double UtcOffset { get; set; }
         
 
         public Time(string airportCode)
@@ -94,7 +94,7 @@ namespace Models
             this.Minutes = minUTC;
             int secUTC = localTime.Second;
             this.Seconds = secUTC;
-            this.UtcOffset = hourOffset;
+            this.UtcOffset = utcOffset;
         }
     }
 }
