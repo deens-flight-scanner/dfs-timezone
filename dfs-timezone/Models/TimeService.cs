@@ -15,7 +15,12 @@ namespace Models
             string startTime = timeDeparture.Hour + ":" + timeDeparture.Minutes;
             string endTime = timeArrival.Hour + ":" + timeArrival.Minutes;
 
-            TimeSpan duration = DateTime.Parse(endTime).Subtract(DateTime.Parse(startTime));
+            TimeSpan t1 = TimeSpan.Parse(startTime);
+            TimeSpan t2 = TimeSpan.Parse(endTime);
+            double _24h = (new TimeSpan(24, 0, 0)).TotalMilliseconds;
+            double diff = t2.TotalMilliseconds - t1.TotalMilliseconds;
+            if (diff < 0) diff += _24h;
+            Console.WriteLine(TimeSpan.FromMilliseconds(diff)); // output: 04:10:00
 
             // var dateNow = DateTime.Now;
             // DateTime startTime = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, timeDeparture.Hour, timeDeparture.Minutes, timeDeparture.Seconds);
@@ -23,7 +28,7 @@ namespace Models
 
             // TimeSpan duration = endTime.Subtract(startTime);
 
-            return duration.ToString(@"hh\:mm");
+            return diff.ToString(@"hh\:mm");
         }
     }
 }
