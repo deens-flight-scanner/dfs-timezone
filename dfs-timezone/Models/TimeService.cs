@@ -12,7 +12,7 @@ namespace Models
             Time timeDeparture = new Time(departureCode);
             Time timeArrival = new Time(arrivalCode);;
 
-            return timeDeparture.UtcOffset - timeArrival.UtcOffset;
+            return timeArrival.UtcOffset - timeDeparture.UtcOffset;
         }
     }
 }
