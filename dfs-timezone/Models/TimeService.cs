@@ -11,20 +11,15 @@ namespace Models
         public Double timeDifference(string departureCode, string arrivalCode) {
             Time timeDeparture = new Time(departureCode);
             Time timeArrival = new Time(arrivalCode);
-            
-            TimeSpan tsDeparture = new TimeSpan(timeDeparture.Hour, timeDeparture.Minutes, timeDeparture.Seconds);
-            Console.WriteLine(timeDeparture.Hour);
-            Console.WriteLine(timeDeparture.Minutes);
-            Console.WriteLine(timeDeparture.Seconds);
-            
-            TimeSpan tsArrival = new TimeSpan(timeArrival.Hour, timeArrival.Minutes, timeArrival.Seconds);
-            Console.WriteLine(timeArrival.Hour);
-            Console.WriteLine(timeArrival.Minutes);
-            Console.WriteLine(timeArrival.Seconds);
 
-            double timeDifference = (tsDeparture - tsArrival).TotalMinutes;
+            string depTime = timeDeparture.Hour + ":" + timeDeparture.Minutes;
+            DateTime startTime = Convert.ToDateTime(depTime);
+            string ArrTime = timeDeparture.Hour + ":" + timeDeparture.Minutes;
+            DateTime endTime = Convert.ToDateTime(ArrTime);
 
-            return timeDifference;
+            TimeSpan duration = startTime - endTime;
+
+            return duration.TotalMinutes;
         }
     }
 }
