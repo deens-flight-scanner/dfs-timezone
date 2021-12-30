@@ -9,6 +9,6 @@ namespace Models
         public Time createTimeObject(string airportCode);
 
         [OperationContract]
-        public Double timeDifference(string departureCode, string arrivalCode);
+        public string timeDifference(string departureCode, string arrivalCode);
     }
 }
